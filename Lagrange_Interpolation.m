@@ -16,10 +16,11 @@ for jj = 1:row
     % Get t at j
     tj = x(jj, 1);
     % Find all points exluding at j index
-    tn = [ x(1:jj-1, 1) x(jj+1:end, 1) ];
+    tn = [ x(1:jj-1, 1)' x(jj+1:end, 1)' ];
     % Calculate basis function
     li(jj, :) = prod( t - tn ) / prod( tj - tn );
 end
 
 % Return final interpolated function
 fx = sum( x(:, 2) .* li );
+
