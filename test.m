@@ -1,13 +1,5 @@
 clear, clc;
 
-<<<<<<< Updated upstream
-x = [-2 -27; 0 -1; 1 0];
-Vandermonde_Interpolation(x)
-||||||| merged common ancestors
-x = [-2 -27; 0 -1; 1 0]
-
-vandermonde(x)
-=======
 % Test ¢ñ: f(x) = exp(x^2), x ¡Ê[0.6,1]; 5 equally spaced points:
 syms x;
 f(x) = exp(x^2);
@@ -67,5 +59,3 @@ plot(xg(:,1), xg(:,2), 'k*');
 fplot(lagrangeg,[-1,1],'r');
 %plot(xd(:,1), xd(:,2), 'k+');
 %fplot(lagranged,[1994,2003],'g');
-
->>>>>>> Stashed changes
