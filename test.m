@@ -10,7 +10,7 @@ for i = 1:5
     xf(i,2) = f(xf(i,1));
 end
 
-vandermondef = vandermonde(xf);
+vandermondef = Vandermonde_Interpolation(xf);
 lagrangef = Lagrange_Interpolation(xf);
 
 % Test ¢ò: f(x) = 1/(1+12*x^2), x ¡Ê[-1,1]; 15 equally spaced points:
@@ -23,13 +23,13 @@ for i = 1:15
     xg(i,2) = g(xg(i,1));
 end
 
-vandermondeg = vandermonde(xg);
+vandermondeg = Vandermonde_Interpolation(xg);
 lagrangeg = Lagrange_Interpolation(xg);
 
 % Test ¢ó£ºData points are given specifically:
 xd = [1994 67.501; 1995 68.008; 1996 69.803; 1997 72.024; 1998 73.400; 1999 72.063; 2000 74.669; 2001 74.487; 2002 74.065; 2003 76.777];
 
-vandermonded = vandermonde(xd);
+vandermonded = Vandermonde_Interpolation(xd);
 lagranged = Lagrange_Interpolation(xd);
 
 % ============================================
