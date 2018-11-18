@@ -7,19 +7,16 @@ function [fx] = Vandermonde_Interpolation(x)
 
 % Get number of points in x
 [row,~] = size(x); 
-% Create initial A matrix for Vandermonde
-A = repmat(x(:,1), [1,row]);
 
+% Create range of exponentials for Vandermonde
+jj = 0:(row - 1);
 % Create Vandermonde matrix
-for jj = 1:row
-    % Take each column to the jj - 1 power
-    A(:, jj) = A(:, jj).^(jj-1);
-end
+A = x(:,1) .^ jj;
 
 % Take the second column (i.e the y value) of the input matrix
 b = x(:,2); 
 % Solve for coefficient matrix 
-c = A\b; 
+c = A\b;
 
 syms x;
 % Initialize function with final coefficient value
