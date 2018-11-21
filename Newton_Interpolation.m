@@ -19,8 +19,12 @@ for i = 2:r
     p(i) = prod( t_values );
 end
 
+% Create empty map to store precomputed values
+data = containers.Map('KeyType','double','ValueType','double');
 % Determine the polynomial with divided differences coefficients:
 fx = 0;
 for i = 1:r
-    fx = fx + ( Newton_Interpolation_Coefficient(x, 1:i) * p(i) );
+    % Calculate coefficient
+    [fc, data] = Newton_Interpolation_Coefficient(x, 1:i, data);
+    fx = fx + ( fc * p(i) );
 end
