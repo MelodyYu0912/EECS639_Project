@@ -14,38 +14,44 @@ precipitation = cellfun(@str2double, precipitation);
 
 dates = table2array(weather_data(:, 3));
 
-figure;
+st = 0;
+ed = 100;
+inc = 5;
+
+datesToDisplay = datestr(dates(1:inc:end));
 
 %% Max temp
-% Should be x = 0:5:100 -> once we get correct data file
-x = 0:5:90;
+x = st:inc:ed;
 y = max_temp(x + 1);
 f = [ x' y ];
 
 temp_newton = Newton_Interpolation(f);
-subplot(121);
+figure;
 plot(x, y, 'ko');
 hold on;
-% TODO: change to 0 to 100
-fplot(temp_newton, [0, 90]);
+fplot(temp_newton, [st, ed]);
 hold off;
 title("Max temperature for Lawrence, KS");
 xlabel('date');
+xticks(x);
+xticklabels(datesToDisplay);
+xtickangle(45);
 ylabel('temp, C');
 
 %% Rainfall
-% Should be x = 0:5:100 -> once we get correct data file
-x = 0:5:90;
+x = st:inc:ed;
 y = precipitation(x + 1);
 f = [ x' y ];
 
 precip_newton = Newton_Interpolation(f);
-subplot(122);
+figure;
 plot(x, y, 'ko');
 hold on;
-% TODO: change to 0 to 100
-fplot(precip_newton, [0, 90]);
+fplot(precip_newton, [st, ed]);
 hold off;
-title("Max temperature for Lawrence, KS");
+title("Max precipitation for Lawrence, KS");
 xlabel('date');
+xticks(x);
+xticklabels(datesToDisplay);
+xtickangle(45);
 ylabel('precipitation');
