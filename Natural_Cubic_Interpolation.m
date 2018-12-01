@@ -7,7 +7,7 @@ function [fx] = Natural_Cubic_Interpolation(x)
 % Get number of points:
 [r,~] = size(x);
 % Create a matrix to store r-1 piecewise functions:
-fx = zeros(r-1,1);
+fx = sym('a',[r - 1, 1]);
 
 % Calculating the number of equations required for NCS:
 n = (r-1)*4;
@@ -45,13 +45,11 @@ A(n,n-1) = 2;
 A(n,n) = x(r,1)*6;
 
 % Calculating the coefficients:
-c = A\y;
+c = Guassian_Elimination_Partial_Pivot(A, y);
 
 % Create syms for functions:
 syms t;
 
 for i = 1:(r-1)
-    fx(i) = [1 t t^2 t^3] * c((4*i-3):(4*i));
+    fx(i) = sum( [ 1 t t^2 t^3 ] .* c( ( 4*i - 3):(4*i) )' );
 end
-end
-
