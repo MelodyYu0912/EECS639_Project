@@ -1,5 +1,5 @@
 function [x] = Guassian_Elimination_Partial_Pivot (A, b)
-% GUASSIAN_ELIMINATION_PARTIAL_PIVOT   return GEEP solution of Ax = b
+% GUASSIAN_ELIMINATION_PARTIAL_PIVOT   return GEPP solution of Ax = b
 %                                      with back substitution
 %                                      where A is n by n matrix and
 %                                      b is n by 1 matrix
