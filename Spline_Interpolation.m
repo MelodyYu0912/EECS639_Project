@@ -50,6 +50,7 @@ switch type
         % Set second derivative at each endpoint to be zero
         A(n - 1, 3) = 2;
         A(n - 1, 4) = x(1, 1) * 6;
+        
         A(n, n - 1) = 2;
         A(n, n)     = x(r, 1) * 6;
         
@@ -61,17 +62,24 @@ switch type
         A(n - 1, 2) = 1;
         A(n - 1, 3) = x(1, 1) * 2;
         A(n - 1, 4) = x(1, 1) ^ 2 * 3;
+        % y = slope between enpoint and nearest breakpoint
         y(n - 1)    = ( x(2, 2) - x(1, 2) ) / ( x(2, 1) - x(1, 1) );
         
         A(n, n - 2) = 1;
         A(n, n - 1) = x(r, 1) * 2;
         A(n, n)     = x(r, 1) ^ 2 * 3;
+        % y = slope between enpoint and nearest breakpoint
         y(n)        = ( x(r, 2) - x(r - 1, 2) ) / ( x(r, 1) - x(r - 1, 1) );
     
     % Not-a-knot cubic spline
     case "not-a-knot"
+        % Set third derivative at left and right most breakpoints equal
+        A(n - 1, 4) = 6;
+        A(n - 1, 8) = -6;
         
-        
+        A(n , n)    = -6;
+        A(n, n - 4) = 6;
+                
     % Invalid type input
     otherwise
         error("Error: type of cubic spline interpolation is not valid or supported");
