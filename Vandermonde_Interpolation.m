@@ -16,8 +16,7 @@ A = x(:,1) .^ jj;
 % Take the second column (i.e the y value) of the input matrix
 b = x(:,2); 
 % Solve for coefficient matrix 
-% TODO: REPLACE WITH GEPP
-c = A\b;
+c = Guassian_Elimination_Partial_Pivot(A, b);
 
 syms x;
 % Initialize function with final coefficient value
