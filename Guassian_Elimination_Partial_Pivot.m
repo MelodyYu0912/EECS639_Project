@@ -32,6 +32,11 @@ for s = 1:n
     
     % Perform Guassian Elimination and zero out rows below pivot
     for t = (s + 1):n
+        % If element is already zero, skip computation
+        if A(t, s) == 0
+            continue;
+        end
+        
         % Create constant to multiply pivot row by
         a = A(t, s) / A(s, s);
         
