@@ -48,14 +48,25 @@ switch type
     % Natural cubic spline
     case "natural"
         % Set second derivative at each endpoint to be zero
-        A(n-1,3) = 2;
-        A(n-1,4) = x(1,1)*6;
-        A(n,n-1) = 2;
-        A(n,n) = x(r,1)*6;
+        A(n - 1, 3) = 2;
+        A(n - 1, 4) = x(1, 1) * 6;
+        A(n, n - 1) = 2;
+        A(n, n)     = x(r, 1) * 6;
         
     % Complete/Clamped cubic spline
     case "complete"
+        % Set first derivative at each endpoint to value
+        % We chose to use the derivative of the lines connecting the
+        % two consecutive points at the endpoints
+        A(n - 1, 2) = 1;
+        A(n - 1, 3) = x(1, 1) * 2;
+        A(n - 1, 4) = x(1, 1) ^ 2 * 3;
+        y(n - 1)    = ( x(2, 2) - x(1, 2) ) / ( x(2, 1) - x(1, 1) );
         
+        A(n, n - 2) = 1;
+        A(n, n - 1) = x(r, 1) * 2;
+        A(n, n)     = x(r, 1) ^ 2 * 3;
+        y(n)        = ( x(r, 2) - x(r - 1, 2) ) / ( x(r, 1) - x(r - 1, 1) );
     
     % Not-a-knot cubic spline
     case "not-a-knot"
