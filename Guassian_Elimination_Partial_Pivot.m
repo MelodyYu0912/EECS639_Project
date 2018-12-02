@@ -12,7 +12,7 @@ x = zeros(n, 1);
 % Loop through each column of A
 for s = 1:n
     % Find max element in column s and its corresponding index
-    [~, index] = max(A(s:end,s));
+    [~, index] = max( abs( A(s:end, s) ) );
     index = index + (s - 1);
     
     % If max is not at position (s, s), swap rows for A and b
