@@ -14,26 +14,42 @@
 # Resulting renders of interpolants:
 
 ## Data set 1
-![alt text][data_set_1]
+f(x) = (e^x^)^2, [0.6,1] |  
+:-----------------------:|
+![alt text][data_set_1]  |
+
 ## Data set 2
-![alt_text][data_set_2]
+f(x) = 1 / ( 1 + 12x^2^ ), [-1,1] |  
+:--------------------------------:|
+![alt text][data_set_2]           |
+
 ## Data set 3
-![alt_text][data_set_3]
+Given yearly data set    |  
+:-----------------------:|
+![alt text][data_set_3]  |
 
 ---
 ## Weather data
 
 ### Temperature
 
-![alt_text][temperature]
-![alt_text][temperature_zoomed]
-![alt_text][temperature_spline]
+Newton's Interpolation     |  Zoomed                  |
+:-------------------------:|:-------------------------:
+![alt_text][temperature]  |  ![alt_text][temperature_zoomed]
+
+Natural Cubic Spline Interpolation |  
+:---------------------------------:|
+![alt_text][temperature_spline]    |
 
 ### Precipitation
 
-![alt_text][precipitation]
-![alt_text][precipitation_zoomed]
-![alt_text][precipitation_spline]
+Newton's Interpolation     |  Zoomed                  |
+:-------------------------:|:-------------------------:
+![alt_text][precipitation]  |  ![alt_text][precipitation_zoomed]
+
+Natural Cubic Spline Interpolation |  
+:---------------------------------:|
+![alt_text][precipitation_spline]    |
 
 [data_set_1]: https://github.com/vchadha/EECS639_Project/tree/master/images/data_set_1.png "Interpolants for f(x) = e^(x^2)"
 [data_set_2]: https://github.com/vchadha/EECS639_Project/tree/master/images/data_set_2.png "Interpolants for f(x) = 1/(1 + 12x^2)"
@@ -44,4 +60,3 @@
 [precipitation]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_Newton.png "Newton interpolation for precipitation data"
 [precipitation_zoomed]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_Newton_zoomed.png "Zoomed in Newton's interpolation for precipitation data"
 [precipitation_spline]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_spline.png "Natural spline interpolation for precipitation data"
-
