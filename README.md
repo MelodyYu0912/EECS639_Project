@@ -1,23 +1,26 @@
 # EECS639_Project
-Melody Yu Varun Chadha
+
+##### Melody Yu . Varun Chadha
 ---
 ## Project to visualise weather data and data set with various Interpolation methods
-	* Vandermonde Interpolation
-	* Lagrange Interpolation
-	* Newton's interpolation
-	* Cubic Spline Interpolation
-		..* Natural Spline Interpolation
-		..* Complete Spline Interpolation
-		..* Not-a-knot Spline Interpolation
+* Vandermonde Interpolation
+* Lagrange Interpolation
+* Newton's interpolation
+* Cubic Spline Interpolation
+    * Natural Spline Interpolation
+    * Complete Spline Interpolation
+    * Not-a-knot Spline Interpolation
 ---
 # Resulting renders of interpolants:
 
 ## Data set 1
-
 ![alt text][data_set_1]
+## Data set 2
 ![alt_text][data_set_2]
+## Data set 3
 ![alt_text][data_set_3]
 
+---
 ## Weather data
 
 ### Temperature
@@ -41,5 +44,4 @@ Melody Yu Varun Chadha
 [precipitation]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_Newton.png "Newton interpolation for precipitation data"
 [precipitation_zoomed]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_Newton_zoomed.png "Zoomed in Newton's interpolation for precipitation data"
 [precipitation_spline]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_spline.png "Natural spline interpolation for precipitation data"
-
 
