@@ -1,5 +1,5 @@
 # EECS639_Project
----
+
 ##### Melody Yu . Varun Chadha
 ---
 ## Project to visualise weather data and data set with various Interpolation methods
@@ -12,7 +12,7 @@
     * Not-a-knot Spline Interpolation
 ---
 # Resulting renders of interpolants:
-___
+
 ## Data set 1
 ![alt text][data_set_1]
 ## Data set 2
@@ -22,7 +22,7 @@ ___
 
 ---
 ## Weather data
----
+
 ### Temperature
 
 ![alt_text][temperature]
