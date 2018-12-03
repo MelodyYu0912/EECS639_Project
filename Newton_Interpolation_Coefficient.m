@@ -10,7 +10,12 @@ function [fc, data] = Newton_Interpolation_Coefficient(x, indecies, data)
 % Calculate key value to check for precomputed values
 xk = indecies(1);
 yk = indecies(end);
-key = ( (xk + yk) * (xk + yk + 1) / 2 ) + yk;
+% Use inverse Cantor Pairing function: 
+% ( (xk + yk) * (xk + yk + 1) / 2 ) + yk
+% Improve flops with variables w and t
+w = xk + yk;
+t = w * (w + 1) / 2;
+key = t + yk;
 
 % Check if value is already calculated
 if isKey(data, key)
