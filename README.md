@@ -51,12 +51,12 @@ Natural Cubic Spline Interpolation |
 :---------------------------------:|
 ![alt_text][precipitation_spline]    |
 
-[data_set_1]: https://imgur.com/WcA3yNs "Interpolants for f(x) = e^(x^2)"
-[data_set_2]: https://imgur.com/4K5PzMu "Interpolants for f(x) = 1/(1 + 12x^2)"
-[data_set_3]: https://imgur.com/r4KZEfk "Interpolants for f3 data set"
-[temperature]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_temperature_Newton.png "Newton interpolation for temperature data"
-[temperature_zoomed]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_temperature_Newton_zoomed.png "Zoomed in Newton's interpolation for temperature data"
-[temperature_spline]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_temperature_spline.png "Natural spline interpolation for temperature data"
-[precipitation]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_Newton.png "Newton interpolation for precipitation data"
-[precipitation_zoomed]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_Newton_zoomed.png "Zoomed in Newton's interpolation for precipitation data"
-[precipitation_spline]: https://github.com/vchadha/EECS639_Project/tree/master/images/Lawrence_precipitation_spline.png "Natural spline interpolation for precipitation data"
+[data_set_1]: https://i.imgur.com/WcA3yNs.png "Interpolants for f(x) = e^(x^2)"
+[data_set_2]: https://i.imgur.com/4K5PzMu.png "Interpolants for f(x) = 1/(1 + 12x^2)"
+[data_set_3]: https://i.imgur.com/r4KZEfk.png "Interpolants for f3 data set"
+[temperature]: https://i.imgur.com/M7dvYyy.png?1 "Newton interpolation for temperature data"
+[temperature_zoomed]: https://i.imgur.com/JoyDT3h.png "Zoomed in Newton's interpolation for temperature data"
+[temperature_spline]: https://i.imgur.com/Skolj99.png "Natural spline interpolation for temperature data"
+[precipitation]: https://i.imgur.com/3I4YwhB.png "Newton interpolation for precipitation data"
+[precipitation_zoomed]: https://i.imgur.com/xeYa1ru.png "Zoomed in Newton's interpolation for precipitation data"
+[precipitation_spline]: https://i.imgur.com/97iLpkF.png "Natural spline interpolation for precipitation data"
