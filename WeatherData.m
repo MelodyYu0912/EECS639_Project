@@ -76,6 +76,11 @@ xticklabels(datesToDisplay);
 xtickangle(45);
 ylabel('temp (C)');
 
+% Error for Newton's interpolation
+interpolation = matlabFunction(temp_newton);
+max_error = max(abs(max_temp' - interpolation(st:ed)));
+fprintf('Max error for Newton Interpolation on temperature data is: %d\n', max_error);
+
 %% Rainfall
 % Create data to send to interpolating functions
 x = st:inc:ed;
@@ -125,3 +130,8 @@ xticks(x);
 xticklabels(datesToDisplay);
 xtickangle(45);
 ylabel('precipitation (mm)');
+
+% Error for Newton's interpolation
+interpolation = matlabFunction(precip_newton);
+max_error = max(abs(precipitation' - interpolation(st:ed)));
+fprintf('Max error for Newton Interpolation on precipitation data is: %d\n', max_error);
