@@ -14,7 +14,7 @@
 # Resulting renders of interpolants:
 
 ## Data set 1
-f(x) = (e^x)^2, [0.6,1] |  
+f(x) = e^(x^2), [0.6,1] |  
 :-----------------------:|
 ![alt text][data_set_1]  |
 
