@@ -2,7 +2,7 @@
 % clear variables and screen
 clear, clc;
 
-%% Read data
+%% Read data csv file
 % Define file name containing data
 fileName = 'LawrenceWeatherData.csv';
 % Read csv data table
@@ -26,7 +26,7 @@ inc = 5;
 % Define dates to use on graphs
 datesToDisplay = datestr(dates(1:inc:end));
 
-%% Max temp
+%% Max temperature data
 % Create data to send to interpolating functions
 x = st:inc:ed;
 y = max_temp(x + 1);
@@ -64,7 +64,7 @@ hold on;
 plot(x, y, 'ro');
 % Plot interpolated piecwise functions
 for s = 1:length(temp_natural_spline)
-   fplot( temp_natural_spline(s), [ x(s), x(s + 1) ] );
+    fplot( temp_natural_spline(s), [ x(s), x(s + 1) ] );
 end
 hold off;
 
@@ -77,9 +77,27 @@ xtickangle(45);
 ylabel('temp (C)');
 
 % Error for Newton's interpolation
+% Create symbolic function to compare with true data points
 interpolation = matlabFunction(temp_newton);
+% Find max error as max absolute value of difference between points
 max_error = max(abs(max_temp' - interpolation(st:ed)));
 fprintf('Max error for Newton Interpolation on temperature data is: %d\n', max_error);
+
+% Error for Spline interpolation
+% Initialize error to 0
+max_error = 0;
+% Loop through each spline curve
+for s = 1:length(temp_natural_spline)
+    % Create symbolic function to compare with true data points
+    interpolation = matlabFunction(temp_natural_spline(s));
+    % Calculate max error for repsective curve
+    error_temp = max( abs( max_temp( ( x(s):x(s + 1) ) + 1 )' - interpolation( x(s):x(s + 1) ) ) );
+    % If error on curve is larger than old max error, update error
+    if (error_temp > max_error)
+       max_error = error_temp; 
+    end
+end
+fprintf('Max error for Spline Interpolation on temperature data is: %d\n', max_error);
 
 %% Rainfall
 % Create data to send to interpolating functions
@@ -119,7 +137,7 @@ hold on;
 plot(x, y, 'ro');
 % Plot interpolated piecwise functions
 for s = 1:length(precip_natrual_spline)
-   fplot( precip_natrual_spline(s), [ x(s), x(s + 1) ] );
+    fplot( precip_natrual_spline(s), [ x(s), x(s + 1) ] );
 end
 hold off;
 
@@ -132,6 +150,23 @@ xtickangle(45);
 ylabel('precipitation (mm)');
 
 % Error for Newton's interpolation
+% Create symbolic function to compare with true data points
 interpolation = matlabFunction(precip_newton);
+% Find max error as max absolute value of difference between points
 max_error = max(abs(precipitation' - interpolation(st:ed)));
 fprintf('Max error for Newton Interpolation on precipitation data is: %d\n', max_error);
+
+% Error for Spline interpolation
+% Initialize error to 0
+max_error = 0;
+for s = 1:length(precip_natrual_spline)
+    % Create symbolic function to compare with true data points
+    interpolation = matlabFunction(precip_natrual_spline(s));
+    % Calculate max error for repsective curve
+    error_temp = max( abs( precipitation( ( x(s):x(s + 1) ) + 1 )' - interpolation( x(s):x(s + 1) ) ) );
+    % If error on curve is larger than old max error, update error
+    if (error_temp > max_error)
+       max_error = error_temp; 
+    end
+end
+fprintf('Max error for Spline Interpolation on precipitation data is: %d\n', max_error);
